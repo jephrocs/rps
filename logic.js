@@ -33,20 +33,36 @@ const rpsMatch = (playername1, playername2, choice1, choice2) => {
             'player 1 wins' : 'player 2 wins'
 
     }
-    if (rps(choice1, choice2) === 'Its a tie') {
-        return player1.name + ' and ' + player2.name + ' you have dissapointed me with a stalemate'
-    }
     if (rps(choice1, choice2) === 'critical error') {
         return 'critical error check choice'
     }
-    return rps(choice1, choice2) === 'player 1 wins' ? player1.name + ' wins' : player2.name + ' wins'
-}
-console.log(rpsMatch('marle', 'crono', 'rock', 'rock'))
-console.log(rpsMatch('marle', 'crono', 'rock', 'paper'))
-console.log(rpsMatch('marle', 'crono', 'rock', 'scissors'))
-console.log(rpsMatch('marle', 'crono', 'paper', 'scissors'))
-console.log(rpsMatch('marle', 'crono', 'scissors', 'scissors'))
-console.log(rpsMatch('marle', 'crono', 'rock', 'asdf'))
+    if (rps(choice1, choice2) === 'Its a tie') {
+        return choice1 +' ' + player1.name + ' and ' + player2.name + ' you have dissapointed me with a stalemate ' + choice2 
+    }
 
-console.log(rpsMatch('marle', 'crono', 'asdf', 'asdf'))
-console.log(rpsMatch('marle', 'crono', 'asdf', 'paper'))
+    return rps(choice1, choice2) === 'player 1 wins' ? player1.name + ' wins with ' + choice1 : player2.name + ' wins with ' + choice2
+}
+
+const rpsRan = () => {
+    switch (Math.floor(Math.random() * 3)) {
+        case 0:
+            return "rock";
+            break;
+        case 1:
+            return "scissors";
+            break;
+        case 2:
+            return "paper";
+            break;
+    }
+}
+// console.log(rpsRan())
+console.log(rpsMatch('marle', 'crono', rpsRan(), rpsRan()))
+// console.log(rpsMatch('marle', 'crono', 'rock', 'paper'))
+// console.log(rpsMatch('marle', 'crono', 'rock', 'scissors'))
+// console.log(rpsMatch('marle', 'crono', 'paper', 'scissors'))
+// console.log(rpsMatch('marle', 'crono', 'scissors', 'scissors'))
+// console.log(rpsMatch('marle', 'crono', 'rock', 'asdf'))
+
+// console.log(rpsMatch('marle', 'crono', 'asdf', 'asdf'))
+// console.log(rpsMatch('marle', 'crono', 'asdf', 'paper'))
