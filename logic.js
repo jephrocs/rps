@@ -8,7 +8,7 @@ const lobby = (players) => {
 
 const scores = {
 
-    
+
 }
 
 
@@ -20,14 +20,12 @@ const rpsMatch = (playername1, playername2, choice1, choice2) => {
     var score2 = 0
     var player1 = {
         name: playername1,
-        choice: choice1,
     }
     var player2 = {
         name: playername2,
-        choice: choice2,
 
     }
-    //rock paper scissors logic
+
     const rps = (player1, player2) => {
         if (player1 !== 'rock' && player1 !== 'paper' && player1 !== 'scissors' || player2 !== 'rock' && player2 !== 'paper' && player2 !== 'scissors') {
             return 'critical error'
